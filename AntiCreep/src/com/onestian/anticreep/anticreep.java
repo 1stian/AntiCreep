@@ -15,7 +15,7 @@ public class anticreep extends JavaPlugin {
 	public void onEnable() {
 		anticreep.thisPlugin = this;
 		
-		//Config
+		//Config Test Dev
 		saveConfig();
 		
 		//Metrics
