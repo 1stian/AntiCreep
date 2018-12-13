@@ -15,7 +15,7 @@ public class anticreep extends JavaPlugin {
 	public void onEnable() {
 		anticreep.thisPlugin = this;
 		
-		//Config Test Dev
+		//Config
 		saveConfig();
 		
 		//Metrics
@@ -24,6 +24,7 @@ public class anticreep extends JavaPlugin {
 		//Listeners
 		getServer().getPluginManager().registerEvents(new damageListener(), this);
 		getServer().getPluginManager().registerEvents(new creeperListener(), this);
+		getServer().getPluginManager().registerEvents(new spawnListener(), this);
 		
 		//Commands
 		this.getCommand("acversion").setExecutor(new versionCom());

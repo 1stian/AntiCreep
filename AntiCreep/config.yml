@@ -9,3 +9,6 @@ Custom Explosion Radius: false
 
 # Change radius of custom explosion.
 Explosion Radius: 1
+
+# Whether to disable or enable creeper spawning.
+Spawn creepers: true

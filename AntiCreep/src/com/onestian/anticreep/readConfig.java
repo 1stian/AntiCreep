@@ -25,5 +25,11 @@ public class readConfig {
 		
 		return state;
 	}
+	
+	public static boolean getSpawn() {
+		boolean state = anticreep.thisPlugin.getConfig().getBoolean("Spawn creepers");
+		
+		return state;
+	}
 
 }
