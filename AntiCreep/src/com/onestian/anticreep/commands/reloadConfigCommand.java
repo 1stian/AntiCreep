@@ -9,12 +9,16 @@ import com.onestian.anticreep.anticreep;
 public class reloadConfigCommand implements CommandExecutor {
 
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-		anticreep.thisPlugin.reloadConfig();
-		sender.sendMessage("[AntiCreep] - Config has been reloaded.");
 		
-		return true;
+		if (sender.hasPermission("anticreep.reload") || sender.isOp()) {
+			anticreep.thisPlugin.reloadConfig();
+			sender.sendMessage("[AntiCreep] - Config has been reloaded.");
+			
+			return true;
+		}else {
+			sender.sendMessage("You don't have permission to use this command!");
+			
+			return true;
+		}
 	}
-	
-	
-
 }
