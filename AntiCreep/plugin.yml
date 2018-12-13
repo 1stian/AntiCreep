@@ -1,0 +1,5 @@
+name: AntiCreep
+main: com.onestian.anticreep.anticreep
+version: 1.0
+api-version: 1.13
+commands:
