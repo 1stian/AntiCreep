@@ -1,6 +1,6 @@
 name: AntiCreep
 main: com.onestian.anticreep.anticreep
-version: 1.02
+version: 1.03
 api-version: 1.13
 commands:
       acversion:
@@ -9,3 +9,6 @@ commands:
       acreload:
            description: reloads the config from file
            usage: /acreload
+      acconfig:
+           description: Edit the config from in-game
+           usage: /acconfig block|player|spawn true|false

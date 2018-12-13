@@ -4,6 +4,7 @@ import org.bstats.bukkit.Metrics;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.onestian.anticreep.commands.configCommands;
 import com.onestian.anticreep.commands.reloadConfigCommand;
 import com.onestian.anticreep.commands.versionCom;
 
@@ -29,6 +30,7 @@ public class anticreep extends JavaPlugin {
 		//Commands
 		this.getCommand("acversion").setExecutor(new versionCom());
 		this.getCommand("acreload").setExecutor(new reloadConfigCommand());
+		this.getCommand("acconfig").setExecutor(new configCommands());
 	}
 	
 	@Override
