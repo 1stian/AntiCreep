@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>AntiCreep</groupId>
 	<artifactId>AntiCreep</artifactId>
-	<version>0.0.1</version>
+	<version>1.03</version>
 
 	<repositories>
 		<repository>
@@ -36,7 +36,6 @@
 	</dependencies>
 
 	<build>
-		<finalName>AntiCreep</finalName>
 		<sourceDirectory>src/</sourceDirectory>
 		<resources>
 			<resource>
