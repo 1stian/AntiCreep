@@ -16,11 +16,13 @@ public class anticreep extends JavaPlugin {
 	public void onEnable() {
 		anticreep.thisPlugin = this;
 		
+		this.getLogger().info("[AntiCreep] Author: Stian '1stian' Tofte");
+		//Metrics
+	    Metrics metrics = new Metrics(this);
+		this.getLogger().info("[AntiCreep] Metrics started. bStats");
+		
 		//Config
 		saveConfig();
-		
-		//Metrics
-		Metrics metrics = new Metrics(this);
 		
 		//Listeners
 		getServer().getPluginManager().registerEvents(new damageListener(), this);
