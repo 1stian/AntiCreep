@@ -30,7 +30,7 @@ public class anticreep extends JavaPlugin {
 		//Commands
 		this.getCommand("acversion").setExecutor(new versionCom());
 		this.getCommand("acreload").setExecutor(new reloadConfigCommand());
-		this.getCommand("acconfig").setExecutor(new configCommands());
+		//this.getCommand("acconfig").setExecutor(new configCommands());
 	}
 	
 	@Override
