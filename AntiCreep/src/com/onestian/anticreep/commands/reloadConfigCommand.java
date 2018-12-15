@@ -5,6 +5,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 import com.onestian.anticreep.anticreep;
+import com.onestian.anticreep.messageSender;
 
 public class reloadConfigCommand implements CommandExecutor {
 
@@ -12,11 +13,11 @@ public class reloadConfigCommand implements CommandExecutor {
 		
 		if (sender.hasPermission("anticreep.reload") || sender.isOp()) {
 			anticreep.thisPlugin.reloadConfig();
-			sender.sendMessage("[AntiCreep] - Config has been reloaded.");
+			messageSender.messagePlayer("Config has been reloaded.", sender.getName());
 			
 			return true;
 		}else {
-			sender.sendMessage("You don't have permission to use this command!");
+			messageSender.messageNoPerm(sender.getName());
 			
 			return true;
 		}
