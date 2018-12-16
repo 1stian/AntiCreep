@@ -8,12 +8,15 @@ import org.bukkit.event.entity.EntityExplodeEvent;
 
 public class creeperListener implements Listener {
 	
-	boolean blockDmg = readConfig.getblock();
-	boolean customRadius = readConfig.getCustom();
-	int radius = readConfig.getRadius();
+	public static boolean customExplosion = false;
 	
 	@EventHandler
 	public void creeperExplode(EntityExplodeEvent event) {
+		//Getting config values
+		boolean blockDmg = readConfig.getblock();
+		boolean customRadius = readConfig.getCustom();
+		int radius = readConfig.getRadius();
+		
 		String bDmg = Boolean.toString(blockDmg);
 		EntityType enty = event.getEntityType();
 		
@@ -28,15 +31,16 @@ public class creeperListener implements Listener {
 				//Getting creeper location
 				Location creeperLoc = event.getLocation();
 				
-				//Canceling creeper explosion
+				//Canceling creeper explosion and setting custom explosion.
 				event.setCancelled(true);
+				customExplosion = true;
 				
 				//Creating custom explosion
 				switch (bDmg.toLowerCase()) {
-				case "true":
+				case "false":
 					creeperLoc.getWorld().createExplosion(creeperLoc, radius, false);
 					break;
-				case "false":
+				case "true":
 					creeperLoc.getWorld().createExplosion(creeperLoc.getX(), creeperLoc.getY(), creeperLoc.getZ(), radius, false, false);
 					break;
 				}
