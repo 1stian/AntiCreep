@@ -1,6 +1,10 @@
 package com.onestian.anticreep;
 
+import org.bukkit.plugin.Plugin;
+
 public class readConfig {
+	
+	static Plugin plugin = anticreep.thisPlugin;
 	
 	public static boolean getblock() {
 		boolean state = anticreep.thisPlugin.getConfig().getBoolean("Disable Block Damage");
@@ -31,5 +35,4 @@ public class readConfig {
 		
 		return state;
 	}
-
 }
