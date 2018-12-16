@@ -18,7 +18,7 @@ public class anticreep extends JavaPlugin {
 		
 		this.getLogger().info("[AntiCreep] Author: Stian '1stian' Tofte");
 		//Metrics
-	    Metrics metrics = new Metrics(this);
+	    //Metrics metrics = new Metrics(this);
 		this.getLogger().info("[AntiCreep] Metrics started. bStats");
 		
 		//Config
