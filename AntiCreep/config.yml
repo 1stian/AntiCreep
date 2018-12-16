@@ -8,7 +8,7 @@ Disable Player Damage: false
 Custom Explosion Radius: false
 
 # Change radius of custom explosion.
-Explosion Radius: 1
+Explosion Radius: 3
 
 # Whether to disable or enable creeper spawning.
 Spawn creepers: true
