@@ -36,6 +36,7 @@
 	</dependencies>
 
 	<build>
+	<finalName>AntiCreep</finalName>
 		<sourceDirectory>src/</sourceDirectory>
 		<resources>
 			<resource>
