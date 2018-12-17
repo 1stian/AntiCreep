@@ -29,8 +29,8 @@ public class anticreep extends JavaPlugin {
 		saveConfig();
 		
 		//Listeners
-		getServer().getPluginManager().registerEvents(new damageListener(), this);
 		getServer().getPluginManager().registerEvents(new creeperListener(), this);
+		getServer().getPluginManager().registerEvents(new damageListener(), this);
 		getServer().getPluginManager().registerEvents(new spawnListener(), this);
 		
 		//Commands
