@@ -12,11 +12,12 @@ public class damageListener implements Listener {
 			
 		if (readConfig.getPlayer()) {
 			if (event.getEntityType() == EntityType.PLAYER) {
-				if (event.getDamager().getType() == EntityType.CREEPER || creeperListener.customExplosion) {
+				if (event.getDamager().getType() == EntityType.CREEPER || creeperListener.customExplosion) {					
 					event.setCancelled(true);
 					
 					//Making it false again!
 					creeperListener.customExplosion = false;
+					//anticreep.thisPlugin.getLogger().info("Custom explosion false");
 				}
 			}
 		}

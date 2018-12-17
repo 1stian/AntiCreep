@@ -3,6 +3,7 @@ package com.onestian.anticreep;
 import org.bukkit.Location;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityExplodeEvent;
 
@@ -10,7 +11,7 @@ public class creeperListener implements Listener {
 	
 	public static boolean customExplosion = false;
 	
-	@EventHandler
+	@EventHandler (priority = EventPriority.HIGH)
 	public void creeperExplode(EntityExplodeEvent event) {
 		//Getting config values
 		boolean blockDmg = readConfig.getblock();
@@ -33,7 +34,9 @@ public class creeperListener implements Listener {
 				
 				//Canceling creeper explosion and setting custom explosion.
 				event.setCancelled(true);
+				
 				customExplosion = true;
+				//anticreep.thisPlugin.getLogger().info("Custom explosion true");
 				
 				//Creating custom explosion
 				switch (bDmg.toLowerCase()) {
