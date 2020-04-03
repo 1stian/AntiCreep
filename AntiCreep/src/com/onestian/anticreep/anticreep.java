@@ -50,7 +50,7 @@ public class anticreep extends JavaPlugin {
 	
 	//Custom pies and stuff for bStats ;)
 	public void bStats() {
-		Metrics metrics = new Metrics(this);
+		Metrics metrics = new Metrics(this, 3734);
 		
 		//Disabled block damage chart
 		metrics.addCustomChart(new Metrics.SimplePie("disabled_block_damage", new Callable<String>() {
