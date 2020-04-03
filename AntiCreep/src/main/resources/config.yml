@@ -1,0 +1,14 @@
+# Whether to disable or enable block damage.
+Disable Block Damage: true
+
+# Whether to disable or enable player damage.
+Disable Player Damage: false
+
+# Whether to disable or enable custom explosion radius.
+Custom Explosion Radius: false
+
+# Change radius of custom explosion.
+Explosion Radius: 3
+
+# Whether to disable or enable creeper spawning.
+Spawn creepers: true
