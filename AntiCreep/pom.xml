@@ -36,7 +36,6 @@
 	</dependencies>
 
 	<build>
-	<finalName>AntiCreep</finalName>
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory> <!-- (your resources folder location) -->
