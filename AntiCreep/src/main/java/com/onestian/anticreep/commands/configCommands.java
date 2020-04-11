@@ -41,6 +41,8 @@ public class configCommands implements CommandExecutor {
 						messageSender.messagePlayer("Usage: /acconfig block|player|spawn true|false", sender.getName());
 					}
 					break;
+					default:
+						break;
 				}
 			}else {
 				messageSender.messagePlayer("Usage: /acconfig block|player|spawn true|false", sender.getName());
