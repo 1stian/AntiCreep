@@ -40,11 +40,11 @@ public class creeperListener implements Listener {
 				
 				//Creating custom explosion
 				switch (bDmg.toLowerCase()) {
-				case "false":
-					creeperLoc.getWorld().createExplosion(creeperLoc, radius, false);
+				case "false": creeperLoc.getWorld().createExplosion(creeperLoc, radius, false);
 					break;
-				case "true":
-					creeperLoc.getWorld().createExplosion(creeperLoc.getX(), creeperLoc.getY(), creeperLoc.getZ(), radius, false, false);
+				case "true": creeperLoc.getWorld().createExplosion(creeperLoc.getX(), creeperLoc.getY(), creeperLoc.getZ(), radius, false, false);
+					break;
+					default: creeperLoc.getWorld().createExplosion(creeperLoc, radius, false);
 					break;
 				}
 			}
