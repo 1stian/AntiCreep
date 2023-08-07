@@ -1,6 +1,9 @@
 package com.onestian.anticreep;
 
 import org.bukkit.Location;
+import org.bukkit.Sound;
+import org.bukkit.World;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -19,16 +22,21 @@ public class creeperListener implements Listener {
 		int radius = readConfig.getRadius();
 		
 		String bDmg = Boolean.toString(blockDmg);
-		EntityType enty = event.getEntityType();
+		EntityType entity = event.getEntityType();
+		Entity creeper = event.getEntity();
+		World world = event.getLocation().getWorld();
 		
 		if (blockDmg) {
-			if (enty == EntityType.CREEPER) {
+			if (entity == EntityType.CREEPER) {
 				event.setCancelled(true);
+				if (world != null) {
+					world.playSound(creeper.getLocation(), Sound.ENTITY_GENERIC_EXPLODE, 1, 0);
+				}
 			}
 		}
 		
 		if (customRadius) {
-			if (enty == EntityType.CREEPER) {
+			if (entity == EntityType.CREEPER) {
 				//Getting creeper location
 				Location creeperLoc = event.getLocation();
 				

@@ -3,6 +3,7 @@ package com.onestian.anticreep;
 import java.util.concurrent.Callable;
 
 import org.bstats.bukkit.Metrics;
+import org.bstats.charts.SimplePie;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -53,7 +54,7 @@ public class anticreep extends JavaPlugin {
 		Metrics metrics = new Metrics(this, 3734);
 		
 		//Disabled block damage chart
-		metrics.addCustomChart(new Metrics.SimplePie("disabled_block_damage", new Callable<String>() {
+		metrics.addCustomChart(new SimplePie("disabled_block_damage", new Callable<String>() {
 	        @Override
 	        public String call() throws Exception {
 	            return getConfig().getString("Disable Block Damage");
@@ -61,7 +62,7 @@ public class anticreep extends JavaPlugin {
 		}));
 		
 		//Disabled player damage chart
-		metrics.addCustomChart(new Metrics.SimplePie("disabled_player_damage", new Callable<String>() {
+		metrics.addCustomChart(new SimplePie("disabled_player_damage", new Callable<String>() {
 	        @Override
 	        public String call() throws Exception {
 	            return getConfig().getString("Disable Player Damage");
@@ -69,7 +70,7 @@ public class anticreep extends JavaPlugin {
 		}));
 
 		//Creeper spawning
-		metrics.addCustomChart(new Metrics.SimplePie("creeper_spawning", new Callable<String>() {
+		metrics.addCustomChart(new SimplePie("creeper_spawning", new Callable<String>() {
 	        @Override
 	        public String call() throws Exception {
 	            return getConfig().getString("Spawn creepers");
@@ -77,7 +78,7 @@ public class anticreep extends JavaPlugin {
 		}));
 		
 		//Custom explosion
-		metrics.addCustomChart(new Metrics.SimplePie("custom_explosion", new Callable<String>() {
+		metrics.addCustomChart(new SimplePie("custom_explosion", new Callable<String>() {
 	        @Override
 	        public String call() throws Exception {
 	            return getConfig().getString("Custom Explosion Radius");
@@ -85,7 +86,7 @@ public class anticreep extends JavaPlugin {
 		}));
 		
 		//Explosion radius
-		metrics.addCustomChart(new Metrics.SimplePie("explosion_radius", new Callable<String>() {
+		metrics.addCustomChart(new SimplePie("explosion_radius", new Callable<String>() {
 	        @Override
 	        public String call() throws Exception {
 	            return getConfig().getString("Explosion Radius");
