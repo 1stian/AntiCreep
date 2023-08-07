@@ -10,6 +10,8 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityExplodeEvent;
 
+import java.util.logging.Level;
+
 public class creeperListener implements Listener {
 	
 	public static boolean customExplosion = false;
@@ -29,9 +31,7 @@ public class creeperListener implements Listener {
 		if (blockDmg) {
 			if (entity == EntityType.CREEPER) {
 				event.setCancelled(true);
-				if (world != null) {
-					world.playSound(creeper.getLocation(), Sound.ENTITY_GENERIC_EXPLODE, 1, 0);
-				}
+				explosionSound(world, creeper.getLocation());
 			}
 		}
 		
@@ -49,6 +49,7 @@ public class creeperListener implements Listener {
 				//Creating custom explosion
 				switch (bDmg.toLowerCase()) {
 				case "false": creeperLoc.getWorld().createExplosion(creeperLoc, radius, false);
+					explosionSound(world, creeper.getLocation());
 					break;
 				case "true": creeperLoc.getWorld().createExplosion(creeperLoc.getX(), creeperLoc.getY(), creeperLoc.getZ(), radius, false, false);
 					break;
@@ -56,6 +57,14 @@ public class creeperListener implements Listener {
 					break;
 				}
 			}
+		}
+	}
+
+	public void explosionSound(World world, Location location){
+		if (world != null){
+			world.playSound(location, Sound.ENTITY_GENERIC_EXPLODE, 1, 0);
+		}else{
+			anticreep.thisPlugin.getLogger().log(Level.INFO, "AntiCreep, couldn't find place to make BOOM sound... Sorry.");
 		}
 	}
 }
